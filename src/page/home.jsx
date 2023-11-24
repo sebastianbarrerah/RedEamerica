@@ -2,7 +2,7 @@ import React from 'react'
 import Navbar from '../components/navbar';
 import Footer from '../components/footer';
 
-const saludo = () => {
+const Home = () => {
   return (
     <>
       <Navbar/>
@@ -11,4 +11,4 @@ const saludo = () => {
   )
 }
 
-export default saludo;
+export default Home;
