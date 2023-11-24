@@ -1,6 +1,6 @@
 import React from 'react'
-import Red from '../components/Red'
-import LoginForm from '../components/LoginForm'
+import Red from '../components/red/Red'
+import LoginForm from '../components/loginAndRegister/LoginForm'
 import './RegisAndLogin.scss'
 
 const Login = () => {

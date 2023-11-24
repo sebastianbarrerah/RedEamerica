@@ -1,5 +1,5 @@
 import React from 'react';
-import redImg from '../img/ame 1.svg'
+// import redImg from '../components/img'
 import './Red.scss';
 
 const Red = () => {
