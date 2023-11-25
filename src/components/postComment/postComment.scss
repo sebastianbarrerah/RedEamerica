@@ -1,0 +1,72 @@
+@import '../../assets/styles/reset.scss';
+@import '../../assets/styles/variables.scss';
+
+.container__comment{
+    background-color: white;
+    width: 86%;
+    margin: 10px auto;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    align-items: center;
+    .post__description{
+        width: 90%;
+        margin: 10px auto;
+        padding: 10px 0;
+        .title__post{
+            font-size: 30px;
+            padding-bottom: 20px;
+        }
+        .description{
+            font-size: 19px;
+        }
+    }
+    .postSend{
+        width: 90%;
+        margin: 0 auto;
+        border: 1px solid $color-primary;
+        height: 40px;
+        border-radius: 8px;
+        padding: 5px;
+        font-size: 19px;
+
+    }
+    .post__comment{
+        width: 90%;
+        margin: 10 auto;
+        font-size: 20px;
+        .comment{
+            width: 100%;
+            padding: 10px;
+            border-bottom: 1px solid $color-secundary;
+            display: flex;
+            align-items: center;
+            margin: 30px auto;
+            justify-content: space-between;
+            .img__comment{
+                width: 15%;
+                height: auto;
+                border-radius: 50%;
+                object-fit: cover;
+            }
+            .container__name--comment{
+                display: flex;
+                flex-direction: column;
+                width: 80%;
+                gap: 5px;
+                .name__comment{
+                    font-weight: bold;
+                }
+                .comment__check{
+                    opacity: 90%;
+                }
+            }
+        }
+    }
+}
+
+@media(max-width: 500px){
+    .container__comment{
+        width: 100%;
+    }
+}

@@ -1,0 +1,75 @@
+@import '../../assets/styles/reset.scss';
+@import '../../assets/styles/variables.scss';
+
+.container__postInformacion{
+    width: 86%;
+    height: 60vh;
+    margin: 15px auto;
+    display: flex;
+    background-color: white;
+    border-radius: 5px;
+    .container__personal{
+        width: 30%;
+        display: flex;
+        flex-direction: column;
+        padding-top: 20px;
+        .img__informacion{
+            width: 70%;
+            height: 70%;
+            margin: 0px auto;
+            .foto__informacion{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-radius: 100%
+            }
+        }
+        .informacion__name{
+            font-size: 20px;
+            color: $color-secundary;
+            text-align: center;
+            padding-top: 30px;
+            margin-bottom: 5px;
+        }
+        .informacion__pais{
+            font-size: 20px;
+            color: $color-secundary;
+            text-align: center;
+        }
+    }
+    .file__info{
+        width: 70%;
+        padding: 10px;
+        object-fit: contain;
+        font-size: 20px;
+        text-align: center;
+        align-self: center;
+
+    }
+}
+
+@media(max-width: 500px){
+    .container__postInformacion{
+        width: 100%;
+        .container__personal{
+            position: absolute;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 12px;
+            .img__informacion{
+                width: 15%;
+                height: auto;
+                margin: 0;
+            }
+            .informacion__name{
+                margin: 0;
+                padding: 0;
+            }
+        }
+        .file__info{
+            width: 100%;
+        }
+    }
+}
