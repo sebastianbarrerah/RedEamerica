@@ -1,3 +1,7 @@
+- Hackaton RedEAmérica - BeTeck by Makaia
+
+Plataforma que permite la compartición de conocimientos.
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
