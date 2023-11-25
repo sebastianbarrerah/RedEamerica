@@ -1,9 +1,18 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import './postInfo.scss'
-import { getUser } from '../../services/api/getUsers';
+import { GetData } from '../../services/getUser';
 const PostInfo = () => {
-    const nuevaData = getUser()
-    console.log(nuevaData);
+    useEffect(async() => {
+        const data = await GetData()
+        console.log(data);
+        if (data) {
+            console.log("esto es data", data);
+        }else{
+            console.log("error");
+        }
+    }, [])
+    
+    
     return(
         <section className="container__postInformacion">
             <div className="container__personal">
