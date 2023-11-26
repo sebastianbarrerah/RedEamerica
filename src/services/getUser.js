@@ -1,14 +1,24 @@
-import { collection, getDoc } from "firebase/firestore"
-import { db } from "../firebase/firebase"
+import { collection, getDoc, getDocs, doc } from "firebase/firestore";
+import { db } from "../firebase/firebase";
 
-export const GetData = async() => {
-    try {
-        const docRef = await getDoc(db, users);
-        const data = await docRef.json()
-        console.log(data);
-        return data
-        
-    } catch (error) {
-        console.log(error.code);
+// traer todos los usuarios
+export const getData = async () => {
+    const querySnapshot = await getDocs(collection(db, "users"));
+    const userData = querySnapshot.docs.map((doc) => doc.data());
+    return userData;
+};
+
+// traer un solo usuario por su id
+export const getUniqueUser = async (id) => {
+    const userDocRef = doc(db, "users", id);
+    const userDocSnapshot = await getDoc(userDocRef);
+    
+    if (userDocSnapshot.exists()) {
+      const userData = userDocSnapshot.data();
+      return userData;
+    } else {
+      console.log("El usuario con el ID", id, "no existe.");
+      return null;
     }
-}
+  };
+

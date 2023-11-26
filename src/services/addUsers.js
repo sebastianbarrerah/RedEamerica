@@ -1,12 +1,13 @@
 import { collection, doc, setDoc } from "firebase/firestore";
 import { auth, db } from "../firebase/firebase";
 
-export const addUsers = async(data, id) => {
+// se agrega un nuevo usuario con el uid que se agrego en la autencticacion
+export const addUsers = async (data, id) => {
   try {
-    const docRef = await setDoc(doc(db, "users", id), data);
-    console.log(docRef);
-      console.log(id, "este es el id de auth");
+    await setDoc(doc(db, "users", id), data);
+    console.log("Usuario agregado a Firestore con UID:", id);
   } catch (error) {
-    console.log(error, "hubo algun error");
+    console.error("Error al agregar usuario a Firestore:", error);
+    throw error;
   }
 };

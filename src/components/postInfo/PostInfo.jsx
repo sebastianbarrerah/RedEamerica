@@ -1,18 +1,26 @@
-import React, {useEffect} from 'react';
+import React, { useEffect, useState} from 'react';
 import './postInfo.scss'
-import { GetData } from '../../services/getUser';
+import { getData, getUniqueUser } from '../../services/getUser';
+import { getPost } from '../../services/getPost';
+
 const PostInfo = () => {
-    useEffect(async() => {
-        const data = await GetData()
-        console.log(data);
-        if (data) {
-            console.log("esto es data", data);
-        }else{
-            console.log("error");
+const [info, setInfo] = useState([])
+const [id, setId] = useState("FD70TsZGNJUM2GTOnM97C6mG5Zi1")
+
+useEffect(() => {
+    const fetchData = async () => {
+        try {
+          const data = await getUniqueUser(id);
+          setInfo(data);
+          console.log("Estado actualizado:", data);
+        } catch (error) {
+          console.error('Error al obtener datos:', error);
         }
-    }, [])
-    
-    
+      };
+    fetchData();
+  }, []);
+  console.log(info.posts)
+
     return(
         <section className="container__postInformacion">
             <div className="container__personal">

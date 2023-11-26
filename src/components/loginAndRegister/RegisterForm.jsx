@@ -20,6 +20,7 @@ const RegisterForm = () => {
       password: data.password,
       posts: [],
       state: false,
+      region: `${data.country == "colombia" || "venezuela" || "brasil" || "peru" || "ecuador" || "argentina" || "uruguay" || "Colombia" || "Brasil" || "Venezuela" || "Argentina"? "sur": "norte"}`
     }
     try {
       await addCollection(user)
