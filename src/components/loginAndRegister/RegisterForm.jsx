@@ -2,15 +2,32 @@ import React from 'react';
 import './RegAndLogForm.scss';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router';
+import { addUsers } from '../../services/addUsers'; 
+import Swal from 'sweetalert2'; 
+import { addCollection } from '../../services/addCollection';
 
 const RegisterForm = () => {
   const { register, handleSubmit, reset, formState:{errors} } = useForm();
   const navigate = useNavigate()
 
-  const onSubmit = (data) => {
-    console.log(data);
-    reset()
-    navigate("/")
+
+  const onSubmit = async(data) => {
+    const user = {
+      email: data.email,
+      name: data.name,
+      date: data.date,
+      country: data.country,
+      password: data.password,
+      posts: [],
+      state: false,
+    }
+    try {
+      await addCollection(user)
+      Swal.fire("Usuario creado con exito", "sucess")
+      navigate("/")
+    } catch (error) {
+      console.log(error.message);
+    }
   }
 
   return (
@@ -26,11 +43,14 @@ const RegisterForm = () => {
         <input type="date"  placeholder='Fecha de nacimiento' name='date' {...register("date" , {required: true})}/>
         {errors.date && <span style={{color: "red"}}>Debe ingresar la fecha de naciemiento</span>}
 
-        <input type="text" placeholder='País' name='country' {...register("country" , {required: true})}/>
+        <input type="text" placeholder='País' name='country' {...register("country" ,
+         {required: true})}/>
         {errors.country && <span style={{color: "red"}}>Debe ingresar el pais de residencia</span>}
 
-        <input type="password" placeholder='Contraseña' name='password' {...register("password" , {required: true})}/>
+        <input type="password" placeholder='Contraseña' name='password' {...register("password" ,
+        {required: true, minLength: 6})}/>
         {errors.password && <span style={{color: "red"}}>Debe ingresar la contraseña</span>}
+        {errors.minLength && <span style={{color: "red"}}>La contraseña es demasiado corta</span>}
 
         <button type='submit'>Registrarse</button>
         

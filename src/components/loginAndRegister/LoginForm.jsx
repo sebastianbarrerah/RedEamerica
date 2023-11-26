@@ -2,14 +2,24 @@ import React from 'react';
 import './RegAndLogForm.scss';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router';
+import { useSelector, useDispatch } from 'react-redux';
+import Swal from 'sweetalert2';
+import { loginUsers } from '../../services/loginUsers';
 
 const LoginForm = () => {
+  const dispatch = useDispatch()
   const navigate = useNavigate()
   const { register, handleSubmit, reset, formState:{errors} } = useForm();
 
   const onSubmit = (data) => {
-    console.log(data);
     reset()
+    try {
+      dispatch(loginUsers(data))
+      Swal.fire("Bienvenido", "success")
+      
+    } catch (error) {
+      
+    }
   }
 
 
