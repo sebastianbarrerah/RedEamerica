@@ -3,20 +3,30 @@
 
 .container__header {
   width: 100%;
-  padding: 10px;
+  padding: 10px 30px;
   background-color: $color-secundary;
   border-bottom-left-radius: 14px;
   border-bottom-right-radius: 14px;
   .header__nav {
     height: 100%;
     .header__ul {
-      display: grid;
-      grid-template-columns: 9fr 1fr minmax(200px, 1fr);
+      display: flex;
+
       text-decoration: none;
       list-style: none;
       align-items: center;
       height: 100%;
-      justify-items: center;
+      justify-content: space-between;
+      li {
+        color: white;
+      }
+      li:hover {
+        color: yellowgreen;
+      }
+      .menu {
+        display: flex;
+        gap: 20px;
+      }
       .header__li {
         font-size: 18px;
         font-family: $typography;

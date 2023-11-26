@@ -6,7 +6,7 @@ import Register from "../../page/Register";
 import CrearPost from "../crearPost/CrearPost";
 import PostInfo from "../postInfo/PostInfo";
 import Home from "../../page/home";
-import Red from "../red/Red";
+import Perfil from "../../page/Perfil";
 
 const Router = () => {
   return (
@@ -18,6 +18,7 @@ const Router = () => {
         <Route path="/CrearPost" element={<CrearPost />} />
         <Route path="/PostInfo" element={<PostInfo />} />
         <Route path="/Home" element={<Home />} />
+        <Route path="/Perfil" element={<Perfil />} />
       </Routes>
     </BrowserRouter>
   );

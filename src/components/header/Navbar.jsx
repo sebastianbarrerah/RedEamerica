@@ -6,6 +6,7 @@ import ig from "../../assets/images/ig.png";
 import fb from "../../assets/images/fb.png";
 import cerrar from "../../assets/images/cerrar.png";
 import "./navbar.scss";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -20,11 +21,21 @@ const Navbar = () => {
     <header className="container__header">
       <nav className="header__nav">
         <ul className="header__ul">
-          <li className="header__li--logo">
-            <img src={logo} alt="Logo RedEamerica" className="header__img" />
-          </li>
-          <li className="header__li">Perfil</li>
-          <li className="header__li">Cerrar Sesión</li>
+          <Link to="/Home">
+            <li className="header__li--logo">
+              <img src={logo} alt="Logo RedEamerica" className="header__img" />
+            </li>
+          </Link>
+          <div className="menu">
+            <Link to="/Perfil">
+              <li className="header__li">Perfil</li>
+            </Link>
+            <Link to="/">
+              <li className="header__li--mobile cerrar__sesion">
+                Cerrar Sesión
+              </li>
+            </Link>
+          </div>
         </ul>
       </nav>
       {/* mobile */}
@@ -40,12 +51,15 @@ const Navbar = () => {
           onClick={closeMenu}
         />
         <ul className="header__ul--mobile">
-          <li className="header__li--mobile">Inicio</li>
-          <li className="header__li--mobile">Quienes somos</li>
-          <li className="header__li--mobile">Perfil</li>
-          <li className="header__li--mobile">Posts</li>
-
-          <li className="header__li--mobile cerrar__sesion">Cerrar Sesión</li>
+          <Link to="/Perfil">
+            <li className="header__li--mobile">Perfil</li>
+          </Link>
+          <Link to="/Post">
+            <li className="header__li--mobile">Posts</li>
+          </Link>
+          <Link to="/">
+            <li className="header__li--mobile cerrar__sesion">Cerrar Sesión</li>
+          </Link>
         </ul>
         <figure className="container__img-redes">
           <img src={wpp} alt="icono-whatsapp" className="mobiel__redes" />
