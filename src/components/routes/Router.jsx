@@ -6,6 +6,7 @@ import Register from "../../page/Register";
 import CrearPost from "../crearPost/CrearPost";
 import PostInfo from "../postInfo/PostInfo";
 import Home from "../../page/home";
+import Red from "../red/Red";
 
 const Router = () => {
   return (

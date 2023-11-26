@@ -44,6 +44,7 @@ const Navbar = () => {
           <li className="header__li--mobile">Quienes somos</li>
           <li className="header__li--mobile">Perfil</li>
           <li className="header__li--mobile">Posts</li>
+
           <li className="header__li--mobile cerrar__sesion">Cerrar Sesión</li>
         </ul>
         <figure className="container__img-redes">
