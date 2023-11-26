@@ -7,8 +7,8 @@ const PostComment = () => {
       <article className="post__description">
         <h1 className="title__post">Título del post</h1>
         <p className="description">
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque,
-          laborum officiis! Similique atque voluptate voluptates sed recusandae?
+          ipsum dolor sit amet consectetur adipisicing elit. Doloremque, laborum
+          officiis! Similique atque voluptate voluptates sed recusandae?
           Dolores, atque! Ea accusamus porro tempora quis veniam omnis et
           numquam, adipisci accusantium autem ipsam sed, magni minus quia
           placeat quasi perferendis ad excepturi blanditiis doloribus earum
