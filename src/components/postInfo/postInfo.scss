@@ -1,75 +1,80 @@
-@import '../../assets/styles/reset.scss';
-@import '../../assets/styles/variables.scss';
+@import "../../assets/styles/reset.scss";
+@import "../../assets/styles/variables.scss";
 
-.container__postInformacion{
-    width: 86%;
-    height: 60vh;
-    margin: 15px auto;
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container__postInformacion {
+  gap: 20px;
+  width: fit-content;
+  height: fit-content;
+  padding: 20px;
+  align-self: center;
+  display: flex;
+  background-color: white;
+  border-radius: 10px;
+  margin: 20px 40px;
+  .container__personal {
+    gap: 10px;
     display: flex;
-    background-color: white;
-    border-radius: 5px;
-    .container__personal{
-        width: 30%;
-        display: flex;
-        flex-direction: column;
-        padding-top: 20px;
-        .img__informacion{
-            width: 70%;
-            height: 70%;
-            margin: 0px auto;
-            .foto__informacion{
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-                border-radius: 100%
-            }
-        }
-        .informacion__name{
-            font-size: 20px;
-            color: $color-secundary;
-            text-align: center;
-            padding-top: 30px;
-            margin-bottom: 5px;
-        }
-        .informacion__pais{
-            font-size: 20px;
-            color: $color-secundary;
-            text-align: center;
-        }
+    flex-direction: column;
+    .img__informacion {
+      width: 200px;
+      height: 200px;
+      margin: 0px auto;
+      .foto__informacion {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 100%;
+      }
     }
-    .file__info{
-        width: 70%;
-        padding: 10px;
-        object-fit: contain;
-        font-size: 20px;
-        text-align: center;
-        align-self: center;
-
+    .informacion__name {
+      font-size: 20px;
+      color: $color-secundary;
+      text-align: center;
+      font-weight: 600;
     }
+    .informacion__pais {
+      font-size: 20px;
+      color: $color-secundary;
+      text-align: center;
+      font-weight: 600;
+      border-bottom: 2px solid yellowgreen;
+    }
+  }
+  .file__info {
+    padding: 10px;
+    object-fit: contain;
+    font-size: 20px;
+    text-align: center;
+    align-self: center;
+  }
 }
 
-@media(max-width: 500px){
-    .container__postInformacion{
-        width: 100%;
-        .container__personal{
-            position: absolute;
-            width: 100%;
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            gap: 12px;
-            .img__informacion{
-                width: 15%;
-                height: auto;
-                margin: 0;
-            }
-            .informacion__name{
-                margin: 0;
-                padding: 0;
-            }
-        }
-        .file__info{
-            width: 100%;
-        }
+@media (max-width: 650px) {
+  .container__postInformacion {
+    flex-direction: column;
+    .container__personal {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 12px;
+      .img__informacion {
+        width: 100px;
+        height: 100px;
+        margin: 0;
+      }
+      .informacion__name {
+        margin: 0;
+        padding: 0;
+      }
     }
+    .file__info {
+      width: 100%;
+    }
+  }
 }

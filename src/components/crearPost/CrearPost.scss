@@ -1,0 +1,64 @@
+* {
+  border-style: none;
+}
+.secCrearPost {
+  border-radius: 20px;
+  padding: 20px;
+  gap: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+  width: fit-content;
+}
+
+form {
+  flex-direction: column;
+  display: flex;
+  gap: 20px;
+
+  .inputError {
+    gap: 5px;
+    display: flex;
+    flex-direction: column;
+    input {
+      border-bottom: 2px solid yellowgreen;
+      background-color: white;
+      border-radius: 20px;
+      padding: 10px;
+    }
+    input:hover {
+      border-bottom: 2px solid rgb(175, 175, 175);
+    }
+
+    label {
+      font-weight: 600;
+    }
+
+    span {
+      color: #bc2e2e;
+      transition: ease-out;
+    }
+  }
+
+  button {
+    background-color: transparent;
+    border: 2px solid black;
+    border-radius: 15px;
+    width: 120px;
+    height: 30px;
+    align-self: center;
+  }
+  button:hover {
+    color: white;
+    background-color: yellowgreen;
+    border: yellowgreen;
+  }
+}
+
+@media (max-width: 406px) {
+  .secCrearPost {
+    font-size: 14px;
+  }
+}
