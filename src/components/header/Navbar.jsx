@@ -1,13 +1,10 @@
 import React, { useState } from "react";
 import logo from "../../assets/images/logo.png";
 import menu from "../../assets/images/barra-menu.png";
-import wpp from "../../assets/images/wpp.png";
-import ig from "../../assets/images/ig.png";
-import fb from "../../assets/images/fb.png";
 import cerrar from "../../assets/images/cerrar.png";
 import "./navbar.scss";
 import { Link } from "react-router-dom";
-
+import { IoClose } from "react-icons/io5";
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const openMenu = () => {
@@ -44,12 +41,14 @@ const Navbar = () => {
         <img src={menu} alt="menu hamburguesa" onClick={openMenu} />
       </section>
       <div className={`${open ? "header__container--mobile" : "cerrado"}`}>
-        <img
+        <IoClose
+          color="yellowgreen"
           src={cerrar}
           alt="icono cerrar"
           className="cerrar"
           onClick={closeMenu}
         />
+        ;
         <ul className="header__ul--mobile">
           <Link to="/Perfil">
             <li className="header__li--mobile">Perfil</li>
@@ -61,11 +60,6 @@ const Navbar = () => {
             <li className="header__li--mobile cerrar__sesion">Cerrar Sesión</li>
           </Link>
         </ul>
-        <figure className="container__img-redes">
-          <img src={wpp} alt="icono-whatsapp" className="mobiel__redes" />
-          <img src={ig} alt="icono-instagram" className="mobiel__redes" />
-          <img src={fb} alt="icono-facebook" className="mobiel__redes" />
-        </figure>
       </div>
     </header>
   );
