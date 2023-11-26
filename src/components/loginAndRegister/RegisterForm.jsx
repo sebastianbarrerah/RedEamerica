@@ -24,7 +24,7 @@ const RegisterForm = () => {
     }
     try {
       await addCollection(user)
-      Swal.fire("Usuario creado con exito", "sucess")
+      Swal.fire("Usuario creado con exito", "Inicia sesión", "success");
       navigate("/")
     } catch (error) {
       console.log(error.message);

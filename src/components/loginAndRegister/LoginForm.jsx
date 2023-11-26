@@ -5,22 +5,22 @@ import { useNavigate } from 'react-router';
 import { useSelector, useDispatch } from 'react-redux';
 import Swal from 'sweetalert2';
 import { loginUsers } from '../../services/loginUsers';
+import { loginState } from '../../features/login/loginSlice';
 
 const LoginForm = () => {
   const dispatch = useDispatch()
   const navigate = useNavigate()
   const { register, handleSubmit, reset, formState:{errors} } = useForm();
 
-  const onSubmit = (data) => {
-    reset()
+  const onSubmit = async (data) => {
+    reset();
     try {
-      dispatch(loginUsers(data))
-      Swal.fire("Bienvenido", "success")
-      
+      await dispatch(loginUsers(data)); 
+      navigate("/home");
     } catch (error) {
-      
+      console.log(error)
     }
-  }
+  };
 
 
   return (
@@ -32,8 +32,8 @@ const LoginForm = () => {
         <input type="password" placeholder='Contraseña' name='password' {...register("password" , {required: true})}/>
         {errors.password && <span style={{color: "red"}}>Debe ingresar su contraseña</span>}
         <button type="submit" >Ingresar</button>
-        <button>RedEamerica</button>
-        <button onClick={navigate("/register")}>Registrate</button>
+        <button type='button'>RedEamerica</button>
+        <button type='button' onClick={() => {navigate("/register")}} >Registrate</button>
       </form>
     </div>
   )

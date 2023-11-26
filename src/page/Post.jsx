@@ -5,11 +5,10 @@ import PostComment from '../components/postComment/PostComment';
 
 const Post = () => {
   return (
-    <main style={{background: "#f5f5f5"}}>
+    <main style={{background: "#f5f5f5"}}> 
       <Navbar/>
       <PostInfo />
-      <PostComment/>
-    </main>
+    </main> 
   )
 }
 export default Post;

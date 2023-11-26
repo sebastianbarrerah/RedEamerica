@@ -4,7 +4,7 @@ const idSlice = createSlice({
     initialState: null,
     reducers: {
         idUser: (state, action) => {
-             state = action.payload;
+            return action.payload;
         }
     }
 })
