@@ -22,9 +22,9 @@ const Post = () => {
             alt=""
           />
           <p className="secPost__p">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-            Laboriosam, aliquam excepturi! Odio omnis deserunt assumenda velit
-            doloribus accusantium amet necessitatibus?
+            ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam,
+            aliquam excepturi! Odio omnis deserunt assumenda velit doloribus
+            accusantium amet necessitatibus?
           </p>
         </div>
       </div>
