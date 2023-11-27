@@ -2,17 +2,19 @@
 @import "../../assets/styles/variables.scss";
 
 .container__comment {
-  background-color: white;
   width: 86%;
-  margin: 10px auto;
+  margin: 10px 0 10px 60px;
   display: flex;
   flex-direction: column;
   border-radius: 10px;
-  align-items: center;
   .post__description {
-    width: 90%;
-    margin: 10px auto;
-    padding: 10px 0;
+    width: 100%;
+    align-self: center;
+    .description {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
     .title__post {
       font-size: 20px;
     }
@@ -20,57 +22,11 @@
       font-size: 16px;
     }
   }
-  .postSend {
-    width: 90%;
-    margin: 0 auto;
-    border: 2px solid $color-primary;
-    height: 40px;
-    border-radius: 20px;
-    padding: 5px;
-    font-size: 15px;
-  }
-  .post__comment {
-    width: 90%;
-    margin: 10 auto;
-    font-size: 20px;
-    .comment {
-      gap: 14px;
-      width: 100%;
-      padding: 10px;
-      border-bottom: 2px solid rgb(196, 196, 196);
-      display: flex;
-      align-items: center;
-      margin: 20px;
-      .img__comment {
-        width: 80px;
-        height: 80px;
-        border-radius: 50%;
-        object-fit: cover;
-      }
-      .container__name--comment {
-        display: flex;
-        flex-direction: column;
-        width: 80%;
-        gap: 5px;
-        .name__comment {
-          font-weight: bold;
-        }
-        .comment__check {
-          opacity: 90%;
-          font-size: 14px;
-        }
-      }
-    }
-  }
 }
 
-@media (max-width: 700px) {
+@media (max-width: 600px) {
   .container__comment {
     width: 100%;
-  }
-
-  .comment__check {
-    opacity: 90%;
-    font-size: 12px;
+    margin: 20px 0 0 0;
   }
 }

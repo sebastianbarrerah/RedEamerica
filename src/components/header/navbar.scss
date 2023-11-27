@@ -26,6 +26,9 @@
       .menu {
         display: flex;
         gap: 20px;
+        .cerrar__sesion {
+          justify-self: center;
+        }
       }
 
       .header__li {
@@ -73,8 +76,14 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 10px 12px 0 12px;
+      padding: 10px;
       cursor: pointer;
+      .hamburguesa {
+        width: 30px;
+        height: 20px;
+        margin-right: 5px;
+        cursor: pointer;
+      }
     }
     .cerrado {
       display: none;
@@ -125,9 +134,5 @@
         }
       }
     }
-  }
-  .hamburguesa {
-    width: 100px;
-    height: 100px;
   }
 }

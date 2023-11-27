@@ -15,10 +15,10 @@ const Navbar = () => {
   };
 
   const cerrarSesion = () => {
-    console.log("funciona")
+    console.log("funciona");
     try {
       dispatch(closeSession());
-      navigate("/")
+      navigate("/");
     } catch (error) {
       console.log(error);
     }
@@ -34,10 +34,8 @@ const Navbar = () => {
             </li>
           </Link>
           <div className="menu">
-          <Link to="/Crear">
-              <li className="header__li--mobile cerrar__sesion">
-                Crear post
-              </li>
+            <Link to="/Crear">
+              <li className="header__li--mobile cerrar__sesion">Crear post</li>
             </Link>
             <Link to="/Perfil">
               <li className="header__li">Perfil</li>
@@ -52,8 +50,15 @@ const Navbar = () => {
       </nav>
       {/* mobile */}
       <section className="header__mobile">
-        <img src={logo} alt="logo RedEamerica" />
-        <img src={menu} alt="menu hamburguesa" onClick={openMenu} />
+        <Link to="/Home">
+          <img className="RedEamerica" src={logo} alt="logo RedEamerica" />
+        </Link>
+        <img
+          className="hamburguesa"
+          src={menu}
+          alt="menu hamburguesa"
+          onClick={openMenu}
+        />
       </section>
       <div className={`${open ? "header__container--mobile" : "cerrado"}`}>
         <IoClose
@@ -81,5 +86,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
-
