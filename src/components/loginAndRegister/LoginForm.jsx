@@ -24,8 +24,9 @@ const LoginForm = () => {
 
 
   return (
-    <div className='registerForm'>
-      <h1 className='registerTittle'>Bienvenido</h1>
+    <div className="registerForm">
+      <h1 className="registerTittle">Bienvenido</h1>
+
       <form onSubmit={handleSubmit(onSubmit)}>
         <input type="email" placeholder='Correo' name='email' {...register("email" , {required: true})}/>
         {errors.email && <span style={{color: "red"}}>Debe ingresar el correo electronico</span>}
@@ -36,7 +37,7 @@ const LoginForm = () => {
         <button type='button' onClick={() => {navigate("/register")}} >Registrate</button>
       </form>
     </div>
-  )
-}
+  );
+};
 
 export default LoginForm;

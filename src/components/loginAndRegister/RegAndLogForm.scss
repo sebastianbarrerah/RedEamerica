@@ -1,65 +1,89 @@
-.registerForm{
+.registerForm {
+  display: flex;
+  width: 50%;
+  height: 100vh;
+  flex-direction: column;
+  background-color: #d9d9d9;
+  justify-content: center;
+  h1 {
+    padding-left: 90px;
+    font-size: 48px;
+  }
+  form {
     display: flex;
-    width: 50%;
-    height: 100vh;
     flex-direction: column;
-    background-color: #D9D9D9;
-    h1{
-        padding-left: 90px;
-        font-size: 48px;
+    align-items: center;
+    gap: 20px;
+    padding: 15px;
+    width: 100%;
+
+    input[type="date"]::-webkit-calendar-picker-indicator {
+      cursor: pointer;
+      border-radius: 4px;
+      margin-right: 25px;
+      opacity: 50%;
     }
-    form{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 25px;
-        input{
-            ::placeholder{
-                color: white;
-            }
-            font-size: 24px;
-            max-width: 310px;
-            height: 50px;
-            border-style: none;
-            border-radius: 20px;
-            text-align: center;
-            background-color: #82BB2C;
-        }
-        button{
-            font-size: 24px;
-            max-width: 186px;
-            height: 50px;
-            border-radius: 20px;
-            background-color: transparent;
-        }
+    input:hover {
+      border-bottom: 2px solid rgb(175, 175, 175);
     }
+    .inputError {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      align-items: center;
+      input {
+        border-bottom: 2px solid yellowgreen;
+      }
+    }
+    input {
+      height: 40px;
+      width: 300px;
+      font-size: 16px;
+      max-width: 310px;
+      border-style: none;
+      border-radius: 20px;
+      text-align: center;
+      border-bottom: 2px solid yellowgreen;
+    }
+    button {
+      font-size: 16px;
+      height: 40px;
+      width: 130px;
+      padding: 10px;
+      border-radius: 20px;
+      background-color: transparent;
+    }
+  }
+  .span {
+    color: #bc2e2e;
+  }
+}
+input:hover {
+  border-bottom: 2px solid rgb(175, 175, 175);
 }
 
-@media (max-width:875px){
-    .registerForm{
-        width: 100%;
-        height: 85%;
-        align-items: center;
-        color: white;
-        background-color: #01140E;
-        h1{
-            padding: 0;
-            font-size: 30px;
-        }
-        form{
-            gap: 20px;
-            input{
-                height: 35px;
-                border-radius: 15px;
-                font-size: 18px;
-            }
-            button{
-                height: 35px;
-                border-radius: 15px;
-                font-size: 18px;
-                color: white;
-                border: 2px solid white;
-            }
-        }
+@media (max-width: 875px) {
+  .registerForm {
+    width: 100%;
+    height: 85%;
+    align-items: center;
+    color: white;
+    background-color: #01140e;
+    h1 {
+      padding: 0;
+      font-size: 30px;
     }
+    form {
+      gap: 20px;
+      input {
+        height: 35px;
+        border-radius: 15px;
+        font-size: 18px;
+      }
+      button {
+        color: white;
+        border: 2px solid white;
+      }
+    }
+  }
 }

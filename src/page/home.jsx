@@ -1,14 +1,14 @@
-import React from 'react'
-import Navbar from '../components/navbar';
-import Footer from '../components/footer';
+import React from "react";
+import Navbar from "../components/header/Navbar";
+import Post from "../components/post/Post";
 
-const saludo = () => {
+const Home = () => {
   return (
     <>
-      <Navbar/>
-      <Footer/>
+      <Navbar />
+      <Post />
     </>
-  )
-}
+  );
+};
 
-export default saludo;
+export default Home;

@@ -32,7 +32,7 @@ const PostComment = ({ dataPost }) => {
             </div>
         </article>
     </section>
-  )
-}
+  );
+};
 
 export default PostComment;

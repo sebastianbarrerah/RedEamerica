@@ -1,0 +1,36 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;500&family=Bellefair&family=Epilogue:wght@500;700&family=Oswald:wght@700&family=Poppins:wght@300;400;500;600&family=Press+Start+2P&family=Roboto:wght@300;400;500&family=Rubik+Iso&family=Tilt+Neon&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #d9d9d9;
+}
+
+body::-webkit-scrollbar {
+  width: 10px;
+}
+
+body::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+}
+body::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+
+input {
+  outline: none;
+}
+
+button {
+  cursor: pointer;
+}

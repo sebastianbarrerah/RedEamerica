@@ -7,8 +7,13 @@ import Swal from 'sweetalert2';
 import { addCollection } from '../../services/addCollection';
 
 const RegisterForm = () => {
-  const { register, handleSubmit, reset, formState:{errors} } = useForm();
-  const navigate = useNavigate()
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm();
+  const navigate = useNavigate();
 
 
   const onSubmit = async(data) => {
@@ -32,17 +37,60 @@ const RegisterForm = () => {
   }
 
   return (
-    <div className='registerForm'>
-      <h1 className='registerTittle'>Registro</h1>
-      <form action="" className='registerInputs' onSubmit={handleSubmit(onSubmit)}>
-        <input type="text" placeholder='Nombre' name='name' {...register("name" , {required: true})}/>
-        {errors.name && <span style={{color: "red"}}>Debe ingresar el nombre</span>}
+    <div className="registerForm">
+      <h1 className="registerTittle">Registro</h1>
+      <form
+        action=""
+        className="registerInputs"
+        onSubmit={handleSubmit(onSubmit)}
+      >
+        <div className="inputError">
+          {" "}
+          <input
+            type="text"
+            placeholder="Nombre"
+            name="name"
+            {...register("name", { required: true })}
+          />
+          {errors.name && <span className="span">Debe ingresar el nombre</span>}
+        </div>
 
-        <input type="email" placeholder='Correo' name='email' {...register("email" , {required: true})}/>
-        {errors.email && <span style={{color: "red"}}>Debe ingresar el correo electronico</span>}
+        <div className="inputError">
+          {" "}
+          <input
+            type="email"
+            placeholder="Correo"
+            name="email"
+            {...register("email", { required: true })}
+          />
+          {errors.email && (
+            <span className="span">Debe ingresar el correo electronico</span>
+          )}
+        </div>
 
-        <input type="date"  placeholder='Fecha de nacimiento' name='date' {...register("date" , {required: true})}/>
-        {errors.date && <span style={{color: "red"}}>Debe ingresar la fecha de naciemiento</span>}
+        <div className="inputError">
+          {" "}
+          <input
+            type="date"
+            name="date"
+            {...register("date", { required: true })}
+          />
+          {errors.date && (
+            <span className="span">Debe ingresar la fecha de naciemiento</span>
+          )}
+        </div>
+        <div className="inputError">
+          {" "}
+          <input
+            type="text"
+            placeholder="País"
+            name="country"
+            {...register("country", { required: true })}
+          />
+          {errors.country && (
+            <span className="span">Debe ingresar el país de residencia</span>
+          )}
+        </div>
 
         <input type="text" placeholder='País' name='country' {...register("country" ,
          {required: true})}/>
@@ -57,7 +105,7 @@ const RegisterForm = () => {
         
       </form>
     </div>
-  )
-}
+  );
+};
 
-export default RegisterForm
+export default RegisterForm;
