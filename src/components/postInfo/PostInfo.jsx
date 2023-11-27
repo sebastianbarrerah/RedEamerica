@@ -34,6 +34,4 @@ const PostInfo = () => {
         </section>
     )
 }
-
-
 export default PostInfo;

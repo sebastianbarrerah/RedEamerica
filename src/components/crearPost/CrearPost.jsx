@@ -3,8 +3,14 @@ import "./CrearPost.scss";
 import "../../components/loginAndRegister/RegAndLogForm.scss";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router";
+import { agregarPost } from "../../services/addPost";
+import { useSelector } from "react-redux";
+import Navbar from "../header/Navbar";
 
 const CrearPost = () => {
+  
+  const userId = useSelector(state => state.userId);
+
   const {
     register,
     handleSubmit,
@@ -14,12 +20,19 @@ const CrearPost = () => {
   const navigate = useNavigate();
 
   const onSubmit = (data) => {
-    console.log(data);
+    const nuevoPost = {
+      titulo: data.titulo,
+      descripcion: data.descripcion,
+      archivo: data.archivo
+    }
+    agregarPost(nuevoPost, userId)
     reset();
+    navigate("/Perfil")
   };
 
   return (
     <secction className="secCrearPost">
+      <Navbar />
       <h2>Crear post</h2>
       <form
         action=""
@@ -31,7 +44,7 @@ const CrearPost = () => {
           <label>Título</label>
           <input
             type="text"
-            placeholder="idk"
+            placeholder="Encuentro social"
             name="titulo"
             {...register("titulo", { required: true })}
           />
@@ -44,8 +57,8 @@ const CrearPost = () => {
           {" "}
           <label>Contenido</label>
           <input
-            type="file"
-            placeholder=""
+            type="text"
+            placeholder="Ingresa por favor el link del archivo"
             name="archivo"
             {...register("archivo", { required: true })}
           />
@@ -67,78 +80,9 @@ const CrearPost = () => {
             <span className="span">Debe ingresar el nombre</span>
           )}
         </div>
-
         <button type="submit">Publicar</button>
       </form>
     </secction>
   );
 };
-
 export default CrearPost;
-
-/* import React, { useState } from "react";
-import firebase from "firebase/app";
-import "firebase/database";
-
-const PostForm = () => {
-  const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
-  const [image, setImage] = useState(null);
-
-  const handleTitleChange = (e) => {
-    setTitle(e.target.value);
-  };
-
-  const handleDescriptionChange = (e) => {
-    setDescription(e.target.value);
-  };
-
-  const handleImageChange = (e) => {
-    // Handle image upload logic
-    const file = e.target.files[0];
-    setImage(file);
-  };
-
-  const handlePostSubmit = () => {
-    // Upload image to Firebase Storage (assuming you have set up Firebase Storage)
-    const storageRef = firebase.storage().ref(`images/${image.name}`);
-    storageRef.put(image).then((snapshot) => {
-      // Get the download URL for the image
-      snapshot.ref.getDownloadURL().then((downloadURL) => {
-        // Save post data to Firebase Realtime Database
-        firebase.database().ref("posts").push({
-          title,
-          description,
-          imageUrl: downloadURL,
-        });
-      });
-    });
-
-    // Reset form fields
-    setTitle("");
-    setDescription("");
-    setImage(null);
-  };
-
-  return (
-    <div>
-      <label>Title:</label>
-      <input type="text" value={title} onChange={handleTitleChange} />
-
-      <label>Description:</label>
-      <input
-        type="text"
-        value={description}
-        onChange={handleDescriptionChange}
-      />
-
-      <label>Attach Image:</label>
-      <input type="file" onChange={handleImageChange} />
-
-      <button onClick={handlePostSubmit}>Post</button>
-    </div>
-  );
-};
-
-export default PostForm;
- */

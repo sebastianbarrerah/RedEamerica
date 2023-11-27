@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router';
 import { addUsers } from '../../services/addUsers'; 
 import Swal from 'sweetalert2'; 
 import { addCollection } from '../../services/addCollection';
+import foto from '../../assets/images/imgPerfil.png'
 
 const RegisterForm = () => {
   const {
@@ -25,7 +26,8 @@ const RegisterForm = () => {
       password: data.password,
       posts: [],
       state: false,
-      region: `${data.country == "colombia" || "venezuela" || "brasil" || "peru" || "ecuador" || "argentina" || "uruguay" || "Colombia" || "Brasil" || "Venezuela" || "Argentina"? "sur": "norte"}`
+      region: `${data.country == "colombia" || "venezuela" || "brasil" || "peru" || "ecuador" || "argentina" || "uruguay" || "Colombia" || "Brasil" || "Venezuela" || "Argentina"? "sur": "norte"}`,
+      photo: {foto} 
     }
     try {
       await addCollection(user)
@@ -77,18 +79,6 @@ const RegisterForm = () => {
           />
           {errors.date && (
             <span className="span">Debe ingresar la fecha de naciemiento</span>
-          )}
-        </div>
-        <div className="inputError">
-          {" "}
-          <input
-            type="text"
-            placeholder="País"
-            name="country"
-            {...register("country", { required: true })}
-          />
-          {errors.country && (
-            <span className="span">Debe ingresar el país de residencia</span>
           )}
         </div>
 

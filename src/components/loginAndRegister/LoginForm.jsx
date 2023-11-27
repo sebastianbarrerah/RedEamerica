@@ -16,7 +16,7 @@ const LoginForm = () => {
     reset();
     try {
       await dispatch(loginUsers(data)); 
-      navigate("/home");
+      navigate("/Home");
     } catch (error) {
       console.log(error)
     }
