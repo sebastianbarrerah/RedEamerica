@@ -6,7 +6,7 @@ function Perfil() {
   return (
     <>
       <Navbar />
-      <UsuarioInfo />
+      <UsuarioInfo/>
     </>
   );
 }
