@@ -1,11 +1,3 @@
-- Hackaton RedEAmérica - BeTeck by Makaia
-
-Plataforma que permite la compartición de conocimientos.
-
-Características de nuestro producto:
-- Registro e inicio de sesión de usuarios
-- Subir, editar y eliminar publicaciones
-- Comentar publicaciones
 
 # React + Vite
 
