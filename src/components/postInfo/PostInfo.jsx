@@ -1,7 +1,8 @@
 import React, { useEffect, useState} from 'react';
 import './postInfo.scss'
-import { useNavigate, useParams, useLocation } from 'react-router';
+import { useLocation } from 'react-router';
 import PostComment from '../postComment/PostComment';
+import foto from '../../assets/images/imgPerfil.png'
 
 const PostInfo = () => {
   const location = useLocation()
@@ -17,7 +18,7 @@ const PostInfo = () => {
       setDataPost(infoPosts)
     }
   }, [])
-  
+
   console.log("esto es personal", dataUser);
   console.log("esto es post", dataPost);
     return( 
@@ -29,7 +30,7 @@ const PostInfo = () => {
                 <span className='informacion__name'>{dataUser? dataUser.name: "Usuario"}</span>
                 <span className='informacion__pais'>{dataUser? dataUser.country: "Usuario"}</span>
             </div>
-            <article className="file__info">{dataPost? dataPost.archivo: "Publicación"}</article>
+            <img className="file__info" src={dataPost? dataPost.archivo: foto}/>
             <PostComment dataPost={dataPost}/>
         </section>
     )

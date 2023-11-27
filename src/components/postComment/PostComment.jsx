@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import foto from '../../assets/images/imgPerfil.png'
 import './postComment.scss';
 const PostComment = ({ dataPost }) => {
     const [comentario, setcomentario] = useState([])
@@ -10,7 +11,6 @@ const PostComment = ({ dataPost }) => {
     console.log(publicacion, "esto es el comentario");
     console.log(publicacion.comentarios);
     
-
   return (
     <section className="container__comment">
         <article className="post__description">
@@ -22,12 +22,10 @@ const PostComment = ({ dataPost }) => {
         <input type="text" className="postSend" placeholder='Comentarios' />
         <article className="post__comment">
             <div className="comment">
-                <img src="https://www.dzoom.org.es/wp-content/uploads/2020/02/portada-foto-perfil-redes-sociales-consejos-810x540.jpg" alt="foto de perfil" className="img__comment" />
+                <img src={foto} alt="foto de perfil" className="img__comment" />
                 <div className="container__name--comment">
-          
-                            <span className="name__comment">{comentario?comentario.nombreComentario:"comentario"}</span>
-                            <span className="comment__check">{comentario?comentario.nombreComentario:"descripcion"}</span>
-       
+                    <span className="name__comment">{comentario?comentario.nombreComentario:"comentario"}</span>
+                    <span className="comment__check">{comentario?comentario.nombreComentario:"descripcion"}</span>
                 </div>
             </div>
         </article>
