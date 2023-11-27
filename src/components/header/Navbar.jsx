@@ -14,6 +14,16 @@ const Navbar = () => {
     setOpen(false);
   };
 
+  const cerrarSesion = () => {
+    console.log("funciona")
+    try {
+      dispatch(closeSession());
+      navigate("/")
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <header className="container__header">
       <nav className="header__nav">
@@ -24,6 +34,11 @@ const Navbar = () => {
             </li>
           </Link>
           <div className="menu">
+          <Link to="/Crear">
+              <li className="header__li--mobile cerrar__sesion">
+                Crear post
+              </li>
+            </Link>
             <Link to="/Perfil">
               <li className="header__li">Perfil</li>
             </Link>
@@ -66,3 +81,5 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+

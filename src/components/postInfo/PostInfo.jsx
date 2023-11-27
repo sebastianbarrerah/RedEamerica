@@ -1,41 +1,38 @@
-import React, { useEffect } from "react";
-import "./postInfo.scss";
-import { GetData } from "../../services/getUser";
-import ImgPost from "../../assets/pride-month-picture.jpg";
+import React, { useEffect, useState} from 'react';
+import './postInfo.scss'
+import { useLocation } from 'react-router';
+import PostComment from '../postComment/PostComment';
+import foto from '../../assets/images/imgPerfil.png'
 
 const PostInfo = () => {
-  useEffect(async () => {
-    const data = await GetData();
-    console.log(data);
-    if (data) {
-      console.log("esto es data", data);
-    } else {
-      console.log("error");
+  const location = useLocation()
+  const [dataUser, setDataUser] = useState()
+  const [dataPost, setDataPost] = useState()
+
+  useEffect(() => {
+    if(location.state){
+      console.log(location.state,"esto lo de location");
+      const infoPersonal = location.state;
+      const infoPosts = location.state.posts;
+      setDataUser(infoPersonal)
+      setDataPost(infoPosts)
     }
-  }, []);
+  }, [])
 
-  return (
-    <div className="container__postInformacionn">
-      <section className="container__postInformacion">
-        <div className="container__personal">
-          <figure className="img__informacion">
-            <img
-              src="https://www.lavanguardia.com/files/content_image_mobile_filter/uploads/2018/07/25/5fa43c9755611.jpeg"
-              alt=""
-              className="foto__informacion"
-            />
-          </figure>
-          <span className="informacion__name">Juan Florez</span>
-          <span className="informacion__pais">Colombia</span>
-        </div>
-        <article className="file__info">
-          <figure className="file__container">
-            <img className="file__img" src={ImgPost} alt="" />
-          </figure>
-        </article>
-      </section>
-    </div>
-  );
-};
-
+  console.log("esto es personal", dataUser);
+  console.log("esto es post", dataPost);
+    return( 
+        <section className="container__postInformacion">
+            <div className="container__personal">
+                <figure className='img__informacion'>
+                    <img src={foto} alt="Foto personal" className="foto__informacion" />    
+                </figure>
+                <span className='informacion__name'>{dataUser? dataUser.name: "Usuario"}</span>
+                <span className='informacion__pais'>{dataUser? dataUser.country: "Usuario"}</span>
+            </div>
+            <img className="file__info" src={dataPost? dataPost.archivo: foto}/>
+            <PostComment dataPost={dataPost}/>
+        </section>
+    )
+}
 export default PostInfo;

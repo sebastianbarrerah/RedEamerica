@@ -11,15 +11,14 @@ import Perfil from "../../page/Perfil";
 const Router = () => {
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/Post" element={<Post />} />
-        <Route path="/CrearPost" element={<CrearPost />} />
-        <Route path="/PostInfo" element={<PostInfo />} />
-        <Route path="/Home" element={<Home />} />
-        <Route path="/Perfil" element={<Perfil />} />
-      </Routes>
+        <Routes>
+            <Route path='/' element={<Login/>} />
+            <Route path='/Home' element={<Home/>} />
+            <Route path='/register' element={<Register/>} />
+            <Route path='/Post' element={<Post/>} />
+            <Route path='/Perfil' element={<Perfil/>} />
+            <Route path='/Crear' element={<CrearPost/>} />
+        </Routes>
     </BrowserRouter>
   );
 };
